@@ -1,3 +1,5 @@
+package GUI;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,7 +36,8 @@ public class JdcbTest {
 
 
         //System.out.println(pytania.get(2));
-        while(np<5) {
+        /*
+        while(np<=4) {
             for (int j = 0; j < pytania.size(); j++) {
                 if (pytania.get(j).getQuestionId() == np
                 )
@@ -49,7 +52,13 @@ public class JdcbTest {
             }
             np = np + 1;
         }
+        */
+        pytania.get(1).getQuestion();
 
+        System.out.println(odpowiedzi.get(1));
+        System.out.println(odpowiedzi.get(2));
+        System.out.println(odpowiedzi.get(3));
+        System.out.println(odpowiedzi.get(4));
         //System.out.println("Pytanie: ");
         //for(Pytanie c: pytania)
         //	System.out.println("\n" + c);
