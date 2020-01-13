@@ -32,6 +32,7 @@ public class GUI_3 extends Application {
         Button btn3 = new Button();
         btn3.setText("Usuń pytanie");
 
+        
         // btn1
         btn1.setLayoutX(200);
         btn1.setLayoutY(130);
