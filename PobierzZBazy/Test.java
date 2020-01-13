@@ -24,7 +24,7 @@ class numer_pytania{
 
 public class Test{
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String DB_URL = "jdbc:mysql://localhost/javaapp?user=root&password=Widzew123@";
+    public static final String DB_URL = "jdbc:mysql://localhost/javaapp?user=root&password=**********";
 
     private Connection conn;
     private Statement stat;
