@@ -55,10 +55,10 @@ public class JdcbTest {
         */
         pytania.get(1).getQuestion();
 
-        System.out.println(odpowiedzi.get(1));
-        System.out.println(odpowiedzi.get(2));
-        System.out.println(odpowiedzi.get(3));
-        System.out.println(odpowiedzi.get(4));
+        System.out.println(odpowiedzi.get(1).getIdQuestion());
+        System.out.println(odpowiedzi.get(2).getIdQuestion());
+        System.out.println(odpowiedzi.get(3).getIdQuestion());
+        System.out.println(odpowiedzi.get(4).getIdQuestion());
         //System.out.println("Pytanie: ");
         //for(Pytanie c: pytania)
         //	System.out.println("\n" + c);

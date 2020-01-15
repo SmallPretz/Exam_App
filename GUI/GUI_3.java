@@ -1,5 +1,12 @@
 package GUI;
 
+import java.util.List;
+import java.util.Scanner;
+
+import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
+import model.Pytanie;
+import model.Odpowiedzi;
+import PobierzZBazy.Test;
 import PobierzZBazy.Test;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -63,16 +70,26 @@ public class GUI_3 extends Application {
                 np = 1;
 
 
-                String textPytanie = pytania.get(1).getQuestion();
-                int textOdpowiedz1 = odpowiedzi.get(1);
-                int textOdpowiedz2 = odpowiedzi.get(2);
-                int textOdpowiedz3 = odpowiedzi.get(3);
-                int textOdpowiedz4 = odpowiedzi.get(4);
 
-                String TextOdpowiedz1String = Integer.toString(textOdpowiedz1);
-                String TextOdpowiedz2String = Integer.toString(textOdpowiedz2);
-                String TextOdpowiedz3String = Integer.toString(textOdpowiedz3);
-                String TextOdpowiedz4String = Integer.toString(textOdpowiedz4);
+                String textPytanie = pytania.get(2).getQuestion();
+                /*
+                int textOdpowiedz1;
+                int textOdpowiedz2;
+                int textOdpowiedz3;
+                int textOdpowiedz4;
+
+                while(np<4){
+                for (int i = 0; i < odpowiedzi.size(); i++) {
+                        if (odpowiedzi.get(i).getIdQuestion() == np)
+                            textOdpowiedz1 = odpowiedzi.get(1).getIdQuestion();
+
+                    }
+                 {
+                 */
+                int textOdpowiedz1 = odpowiedzi.get(1).getIdQuestion();
+                int textOdpowiedz2 = odpowiedzi.get(1).getIdQuestion();
+                int textOdpowiedz3 = odpowiedzi.get(1).getIdQuestion();
+                int textOdpowiedz4 = odpowiedzi.get(1).getIdQuestion();
 
 
                 Text pytanko = new Text();
@@ -81,12 +98,19 @@ public class GUI_3 extends Application {
                 Text odpowiedz3 = new Text();
                 Text odpowiedz4 = new Text();
 
-
-                odpowiedz1.setText(TextOdpowiedz1String);
-                odpowiedz2.setText(TextOdpowiedz1String);
-                odpowiedz3.setText(TextOdpowiedz1String);
-                odpowiedz4.setText(TextOdpowiedz1String);
+                
                 pytanko.setText(textPytanie);
+
+
+
+
+                odpowiedz1.setText(String.valueOf(textOdpowiedz1));
+                odpowiedz2.setText(String.valueOf(textOdpowiedz2));
+                odpowiedz3.setText(String.valueOf(textOdpowiedz3));
+                odpowiedz4.setText(String.valueOf(textOdpowiedz4));
+
+
+
 
                 pytanko.setX(50);
                 pytanko.setY(50);
@@ -100,6 +124,8 @@ public class GUI_3 extends Application {
                 odpowiedz4.setY(140);
                 odpowiedz4.setX(60);
 
+                System.out.println(odpowiedz1);
+                System.out.println(odpowiedz2);
 
                 Group root = new Group(pytanko,odpowiedz1,odpowiedz2,odpowiedz3,odpowiedz4);
                 Scene scene = new Scene(root, 600,300);
