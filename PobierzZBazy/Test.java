@@ -68,10 +68,13 @@ public class Test{
 
     public boolean insertPytanie(int question_id, String question, String subject) {
         try {
+            /*
             String USEJAVAAPP = "USE javaapp;";
             stat.execute(USEJAVAAPP);
+            */
             PreparedStatement prepStmt = conn.prepareStatement(
-                    "INSERT INTO Exam_Questions values(?, ?, ?)");
+
+                    "INSERT INTO Exam_Questions values(NULL,?, ?, ?)");
             prepStmt.setInt(1, question_id);
             prepStmt.setString(2, question);
             prepStmt.setString(3, subject);
@@ -85,9 +88,12 @@ public class Test{
     }
     public boolean insertOdpowiedzi(int id_question, String answer, Boolean is_correct) {
         try {
+            /*
             String USEJAVAAPP = "USE javaapp;";
             stat.execute(USEJAVAAPP);
+            */
             PreparedStatement prepStmt = conn.prepareStatement(
+
                     "INSERT INTO Exam_Answers values(NULL, ?, ?, ?);");
             prepStmt.setInt(1, id_question);
             prepStmt.setString(2, answer);
@@ -150,12 +156,14 @@ public class Test{
             ResultSet result = stat.executeQuery("SELECT * FROM Exam_Answers");
             int id;
             String answer;
+            String answer_variant;
             Boolean is_correct;
             while(result.next()) {
                 id = result.getInt("id_question");
                 answer = result.getString("answer");
+                answer_variant = result.getString("answer_variant");
                 is_correct = result.getBoolean("is_correct");
-                odpowiedzi.add(new Odpowiedzi(id, answer, is_correct));
+                odpowiedzi.add(new Odpowiedzi(id, answer, answer_variant, is_correct));
             }
         }catch(SQLException e) {
             e.printStackTrace();
