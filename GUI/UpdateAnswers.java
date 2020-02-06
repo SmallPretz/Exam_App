@@ -13,6 +13,7 @@ public class UpdateAnswers {
         int question_id;
         String newQuestion;
         String subject;
+
         question_id = 4;
         newQuestion = "Jaki będzie wynik podniesienia liczby 2 do potęgi 3 ?";
 
