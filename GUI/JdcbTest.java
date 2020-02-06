@@ -43,7 +43,7 @@ public class JdcbTest {
 
 
         // Wszystkie pytania i odpowiedzi.
-        /*
+
         while(np<=7) {
             for (int j = 0; j < pytania.size(); j++) {
                 if (pytania.get(j).getQuestionId() == np
@@ -59,7 +59,8 @@ public class JdcbTest {
             }
             np = np + 1;
         }
-        */
+
+        /*
         for (int j = 0; j < pytania.size(); j++) {
             if (pytania.get(j).getQuestionId() == np
             )
@@ -70,6 +71,7 @@ public class JdcbTest {
             if (odpowiedzi.get(i).getIdQuestion() == np && odpowiedzi.get(i).getAnswer_variant().equals("A"))
                 System.out.println(odpowiedzi.get(i));
         }
+        */
         /*
         pytania.get(1).getQuestion();
 

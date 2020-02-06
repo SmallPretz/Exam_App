@@ -12,15 +12,16 @@ public class UpdateQuestions {
         int question_id;
         String newQuestion;
         String subject;
-        question_id = 4;
-        newQuestion = "Jaki będzie wynik podniesienia liczby 2 do potęgi 3 ?";
+        subject = "matematyka";
+        question_id = 7;
+        newQuestion = "Jaki będzie wynik działania 5 - 1 ?";
 
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/javaapp?user=root&password=Widzew123@");
             Statement st = conn.createStatement();
             st.executeUpdate("UPDATE Exam_Questions " +
-                                 "SET question = " + "'" + newQuestion + "'" +
-                                "WHERE question_id = " + question_id +";");
+                                 "SET question = " + "'" + newQuestion + "'" + "," + "subject = " + "'" + subject + "'" +
+                                 "WHERE question_id = " + question_id +";");
 
             conn.close();
         }catch (Exception e){

@@ -10,7 +10,7 @@ public class InsertQuestions {
         int question_id;
         String question;
         String subject;
-        question_id = 7;
+        question_id = 8;
         question = "Nad jakim morzem leży Polska?";
         subject = "Geografia";
         try{
