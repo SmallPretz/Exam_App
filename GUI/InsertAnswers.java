@@ -22,7 +22,7 @@ public class InsertAnswers {
         String is_correct3;
         String is_correct4;
 
-        id_question = 8;
+        id_question = 7;
 
         answer1 = "Bałtyckim";
         is_correct1 = "TRUE";

@@ -20,7 +20,7 @@ public class UpdateAnswers {
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/javaapp?user=root&password=Widzew123@");
             Statement st = conn.createStatement();
-            st.executeUpdate("UPDATE Exam_Questions " +
+            st.executeUpdate("UPDATE Exam_Answers " +
                     "SET question = " + "'" + newQuestion + "'" +
                     "WHERE question_id = " + question_id +";");
 
