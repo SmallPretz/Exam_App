@@ -14,6 +14,8 @@ import java.util.List;
 import model.Pytanie;
 
 import model.Odpowiedzi;
+import model.czyPoprawne;
+
 class numer_pytania{
     int nr_pyt;
     numer_pytania(){
@@ -106,7 +108,6 @@ public class Test{
         }
         return true;
     }
-
     public boolean insertPobierzPytanieIOdpowiedzi(int id_Pytanie, int id_Odpowiedzi) {
         try {
             PreparedStatement prepStmt = conn.prepareStatement(
@@ -170,6 +171,29 @@ public class Test{
             return null;
         }
         return odpowiedzi;
+    }
+    public List<czyPoprawne> selectczyPoprawne(){
+        numer_pytania nr_pytania = new numer_pytania();
+        List<czyPoprawne> czyPoprawne = new LinkedList<czyPoprawne>();
+        try {
+            //ResultSet result = stat.executeQuery("Select * FROM Exam_Answers WHERE id_question = '" + nr_pytania.nr_pyt + "'");
+            ResultSet result = stat.executeQuery("SELECT * FROM Exam_Answers");
+            int id;
+            String answer;
+            String answer_variant;
+            Boolean is_correct;
+            while(result.next()) {
+                id = result.getInt("id_question");
+                answer = result.getString("answer");
+                answer_variant = result.getString("answer_variant");
+                is_correct = result.getBoolean("is_correct");
+                czyPoprawne.add(new czyPoprawne(id, answer, answer_variant, is_correct));
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return czyPoprawne;
     }
 
     public void closeConnection() {

@@ -1,6 +1,6 @@
 package model;
 
-public class Odpowiedzi{
+public class czyPoprawne{
     private int id_question;
     private String answer;
     private Boolean is_correct;
@@ -36,8 +36,8 @@ public class Odpowiedzi{
         this.is_correct = is_correct;
     }
 
-    public Odpowiedzi() {}
-    public Odpowiedzi(int id_question, String answer, String answer_variant, Boolean is_correct) {
+    public czyPoprawne() {}
+    public czyPoprawne(int id_question, String answer, String answer_variant, Boolean is_correct) {
         this.id_question = id_question;
         this.answer = answer;
         this.answer_variant = answer_variant;
@@ -46,6 +46,6 @@ public class Odpowiedzi{
     }
     @Override
     public String toString() {
-        return "	" + answer_variant + " " +  answer ;
+        return answer_variant + " " + is_correct;
     }
 }

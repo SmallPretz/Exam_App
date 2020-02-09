@@ -1,6 +1,7 @@
 
 package GUI;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
 import model.Pytanie;
 import model.Odpowiedzi;
 import PobierzZBazy.Test;
+import model.czyPoprawne;
 
 
 
@@ -18,8 +20,40 @@ public class JdcbTest {
 
         List<Pytanie> pytania = b.selectPytania();
         List<Odpowiedzi> odpowiedzi = b.selectOdpowiedzi();
+        List<czyPoprawne> czyPoprawne = b.selectczyPoprawne();
         int np;
-        np = 1;
+        np = 9;
+        String poprawnaOdpowiedz = "";
+
+        for (int i = 0; i < czyPoprawne.size(); i++) {
+            if (czyPoprawne.get(i).getIdQuestion() == np){
+                if(czyPoprawne.get(i).getIsCorrect() == Boolean.TRUE) {
+                    System.out.println(czyPoprawne.get(i).getAnswer_variant());
+                }
+            }
+
+        }
+
+        /*
+        while(np<=7) {
+            int score = 0;
+            Scanner keyboardinput = new Scanner(System.in);
+
+            for (int j = 0; j < pytania.size(); j++) {
+                if (pytania.get(j).getQuestionId() == np
+                )
+                    System.out.println(pytania.get(j));
+            }
+
+            for (int i = 0; i < odpowiedzi.size(); i++) {
+                if (odpowiedzi.get(i).getIdQuestion() == np)
+                    System.out.println(odpowiedzi.get(i));
+            }
+
+
+            np = np + 1;
+        }
+        */
 
         /*
         while(myStartObj<5){
@@ -44,21 +78,7 @@ public class JdcbTest {
 
         // Wszystkie pytania i odpowiedzi.
 
-        while(np<=7) {
-            for (int j = 0; j < pytania.size(); j++) {
-                if (pytania.get(j).getQuestionId() == np
-                )
-                    System.out.println(pytania.get(j));
 
-            }
-
-            for (int i = 0; i < odpowiedzi.size(); i++) {
-                if (odpowiedzi.get(i).getIdQuestion() == np)
-                    System.out.println(odpowiedzi.get(i));
-
-            }
-            np = np + 1;
-        }
 
         /*
         for (int j = 0; j < pytania.size(); j++) {
@@ -81,13 +101,7 @@ public class JdcbTest {
         System.out.println(odpowiedzi.get(4).getIdQuestion());
         */
 
-        //System.out.println("Pytanie: ");
-        //for(Pytanie c: pytania)
-        //	System.out.println("\n" + c);
 
-        //System.out.println("Odpowiedz: ");
-        //for(Odpowiedzi k: odpowiedzi)
-        //	System.out.println("\n"+ k);
 
         b.closeConnection();
     }
