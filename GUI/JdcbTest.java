@@ -12,7 +12,6 @@ import model.Pytanie;
 import model.Odpowiedzi;
 import PobierzZBazy.Test;
 import model.czyPoprawne;
-import org.w3c.dom.ls.LSOutput;
 
 
 public class JdcbTest {
