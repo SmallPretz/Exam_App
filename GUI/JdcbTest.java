@@ -55,7 +55,7 @@ public class JdcbTest {
 
             np = np + 1;
         }
-
+        //
         System.out.println("You got " + score + "/" + (np - 1));
 
 
